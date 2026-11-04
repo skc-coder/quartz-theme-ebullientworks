@@ -1,21 +1,80 @@
 /**
  * Ebullientworks Theme for Quartz v4 / v5
- * Ported from the Obsidian Ebullientworks theme by ebullient
- * Note: Google Fonts are loaded dynamically by Quartz Head via quartz.config
+ * Comprehensive Port from the Obsidian Ebullientworks Theme by ebullient
+ * (https://github.com/ebullient/obsidian-theme-ebullientworks)
  */
 
+/* ==========================================================================
+   1. CORE COLOR SCALES & TOKENS (Directly from Ebullientworks)
+   ========================================================================== */
 :root {
   --ebw-font-header: var(--headerFont, 'Architects Daughter', cursive, sans-serif);
   --ebw-font-body: var(--bodyFont, 'Source Sans Pro', sans-serif);
   --ebw-font-code: var(--codeFont, 'IBM Plex Mono', monospace);
 
-  /* Heading Colors (Rainbow progression from Ebullientworks) */
+  /* Primary Rainbow Heading Palette */
   --ebw-h1: #f39c12;
   --ebw-h2: #27ae60;
   --ebw-h3: #16a085;
   --ebw-h4: #2980b9;
   --ebw-h5: #8e44ad;
   --ebw-h6: #d81b60;
+
+  /* Color Primitives (OKLCH from Ebullientworks) */
+  --ebw-pink-4: oklch(0.634 0.119 2.735);
+  --ebw-pink-5: oklch(0.555 0.104 2.735);
+  --ebw-red-3: oklch(0.465 0.123 24.111);
+  --ebw-red-4: oklch(0.562 0.149 24.111);
+  --ebw-red-5: oklch(0.659 0.149 24.111);
+  --ebw-orange-3: oklch(0.554 0.098 39.413);
+  --ebw-orange-4: oklch(0.633 0.112 39.413);
+  --ebw-yellow-2: oklch(0.825 0.102 83.018);
+  --ebw-yellow-3: oklch(0.763 0.095 83.018);
+  --ebw-yellow-4: oklch(0.701 0.087 83.018);
+  --ebw-green-3: oklch(0.649 0.06 150.52);
+  --ebw-green-4: oklch(0.549 0.051 150.52);
+  --ebw-cyan-2: oklch(0.786 0.112 195.119);
+  --ebw-cyan-3: oklch(0.704 0.1 195.119);
+  --ebw-cyan-4: oklch(0.623 0.089 195.119);
+  --ebw-blue-2: oklch(0.789 0.048 249.507);
+  --ebw-blue-3: oklch(0.708 0.068 249.507);
+  --ebw-blue-4: oklch(0.628 0.076 249.507);
+  --ebw-blue-5: oklch(0.547 0.066 249.507);
+  --ebw-purple-2: oklch(0.754 0.061 332.854);
+  --ebw-purple-3: oklch(0.655 0.078 332.854);
+  --ebw-purple-4: oklch(0.557 0.067 332.854);
+  --ebw-purple-5: oklch(0.459 0.055 332.854);
+
+  /* Light Theme Defaults */
+  --ebw-table-header-bg: var(--primary-accent-1, #6e40aa);
+  --ebw-table-header-text: #ffffff;
+  --ebw-table-header-border: #4a287a;
+  --ebw-table-row-alt: rgba(0, 0, 0, 0.035);
+  --ebw-table-row-hover: rgba(110, 64, 170, 0.08);
+
+  /* Callout Semantic Colors */
+  --ebw-callout-warning: var(--ebw-yellow-3);
+  --ebw-callout-success: var(--ebw-green-4);
+  --ebw-callout-note: var(--ebw-blue-4);
+  --ebw-callout-info: var(--ebw-blue-5);
+  --ebw-callout-quote: var(--ebw-blue-3);
+  --ebw-callout-tip: var(--ebw-cyan-4);
+  --ebw-callout-question: var(--ebw-cyan-3);
+  --ebw-callout-chat: var(--ebw-cyan-2);
+  --ebw-callout-abstract: var(--ebw-purple-4);
+  --ebw-callout-bug: var(--ebw-purple-5);
+  --ebw-callout-example: var(--ebw-purple-3);
+  --ebw-callout-danger: var(--ebw-red-4);
+  --ebw-callout-failure: var(--ebw-pink-4);
+  --ebw-callout-reference: #898989;
+  --ebw-callout-toc: #cdcdcd;
+
+  /* Checkbox / Task Colors */
+  --ebw-checkbox-checked: var(--ebw-green-4);
+  --ebw-checkbox-deferred: var(--ebw-blue-3);
+  --ebw-checkbox-important: var(--ebw-red-4);
+  --ebw-checkbox-in-progress: var(--ebw-cyan-4);
+  --ebw-checkbox-question: var(--ebw-yellow-3);
 }
 
 [saved-theme="dark"] {
@@ -25,9 +84,39 @@
   --ebw-h4: #3498db;
   --ebw-h5: #9b59b6;
   --ebw-h6: #e91e63;
+
+  --ebw-table-header-bg: #2d1f47;
+  --ebw-table-header-text: #f0f6fc;
+  --ebw-table-header-border: #443068;
+  --ebw-table-row-alt: rgba(255, 255, 255, 0.035);
+  --ebw-table-row-hover: rgba(179, 136, 255, 0.12);
+
+  --ebw-callout-warning: #f1c40f;
+  --ebw-callout-success: #2ecc71;
+  --ebw-callout-note: #3498db;
+  --ebw-callout-info: #2980b9;
+  --ebw-callout-quote: #5dade2;
+  --ebw-callout-tip: #1abc9c;
+  --ebw-callout-question: #16a085;
+  --ebw-callout-chat: #48c9b0;
+  --ebw-callout-abstract: #9b59b6;
+  --ebw-callout-bug: #8e44ad;
+  --ebw-callout-example: #af7ac5;
+  --ebw-callout-danger: #e74c3c;
+  --ebw-callout-failure: #ec7063;
+  --ebw-callout-reference: #737373;
+  --ebw-callout-toc: #3f3f3f;
+
+  --ebw-checkbox-checked: #2ecc71;
+  --ebw-checkbox-deferred: #3498db;
+  --ebw-checkbox-important: #e74c3c;
+  --ebw-checkbox-in-progress: #1abc9c;
+  --ebw-checkbox-question: #f1c40f;
 }
 
-/* Headings with Signature Ebullientworks Styling */
+/* ==========================================================================
+   2. TYPOGRAPHY & HEADINGS (With Signature Ebullientworks § Prefix)
+   ========================================================================== */
 h1, h2, h3, h4, h5, h6, .article-title {
   font-family: var(--ebw-font-header) !important;
   letter-spacing: 0.02em;
@@ -44,7 +133,7 @@ h2 {
   color: var(--ebw-h2) !important;
   font-size: 1.7rem;
   border-bottom: 1px dashed var(--lightgray);
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.25rem;
 }
 
 h3 {
@@ -68,77 +157,265 @@ h6 {
   text-transform: uppercase;
 }
 
-/* Optional Ebullientworks section sign prefix */
 .article-title::before,
 .page-header h1::before {
   content: "§ ";
-  opacity: 0.6;
+  opacity: 0.65;
   font-weight: 400;
+  margin-right: 0.2rem;
 }
 
-/* Obsidian Callouts Styling */
-.callout {
+/* ==========================================================================
+   3. TABLES (Full Zebra Striping, Rounded Headers, Ebullientworks Accents)
+   ========================================================================== */
+.table-container,
+article table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
   border-radius: 6px;
-  border-left: 4px solid var(--secondary);
-  background-color: var(--highlight);
-  padding: 0.8rem 1.2rem;
-  margin: 1.2rem 0;
+  overflow: hidden;
+  border: 1px solid var(--lightgray);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  thead {
+    background-color: var(--ebw-table-header-bg);
+
+    tr th {
+      color: var(--ebw-table-header-text) !important;
+      font-family: var(--ebw-font-header);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.65rem 1rem;
+      border: none;
+      border-bottom: 2px solid var(--ebw-table-header-border);
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.12s ease-in-out;
+
+      &:nth-child(even) {
+        background-color: var(--ebw-table-row-alt);
+      }
+
+      &:hover {
+        background-color: var(--ebw-table-row-hover) !important;
+      }
+
+      td {
+        padding: 0.6rem 1rem;
+        border-top: 1px solid var(--lightgray);
+        border-right: 1px solid var(--lightgray);
+        font-size: 0.95rem;
+        vertical-align: top;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   4. OBSIDIAN CALLOUTS (Full Color Palette Mapping & Handwriting Titles)
+   ========================================================================== */
+.callout {
+  border-radius: 6px !important;
+  border-width: 0 0 0 4px !important;
+  border-style: solid !important;
+  border-color: var(--callout-accent-color, var(--secondary)) !important;
+  background-color: var(--callout-bg-color, var(--highlight)) !important;
+  padding: 0.6rem 1.1rem !important;
+  margin: 1.2rem 0 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 
   .callout-title {
-    font-family: var(--ebw-font-header);
-    font-size: 1.1rem;
+    font-family: var(--ebw-font-header) !important;
+    font-size: 1.15rem !important;
     font-weight: 600;
+    letter-spacing: 0.02em;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
+    padding: 0.4rem 0 !important;
+    color: var(--callout-accent-color, var(--secondary)) !important;
+
+    .callout-icon {
+      background-color: var(--callout-accent-color, var(--secondary)) !important;
+    }
+  }
+
+  .callout-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 0.2rem;
+  }
+
+  /* Full Callout Types from Ebullientworks */
+  &[data-callout="note"] {
+    --callout-accent-color: var(--ebw-callout-note);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-note) 10%, transparent);
+  }
+  &[data-callout="abstract"], &[data-callout="summary"], &[data-callout="tldr"] {
+    --callout-accent-color: var(--ebw-callout-abstract);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-abstract) 10%, transparent);
+  }
+  &[data-callout="info"], &[data-callout="todo"] {
+    --callout-accent-color: var(--ebw-callout-info);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-info) 10%, transparent);
+  }
+  &[data-callout="tip"], &[data-callout="hint"], &[data-callout="important"] {
+    --callout-accent-color: var(--ebw-callout-tip);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-tip) 10%, transparent);
+  }
+  &[data-callout="success"], &[data-callout="check"], &[data-callout="done"] {
+    --callout-accent-color: var(--ebw-callout-success);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-success) 10%, transparent);
+  }
+  &[data-callout="question"], &[data-callout="help"], &[data-callout="faq"] {
+    --callout-accent-color: var(--ebw-callout-question);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-question) 10%, transparent);
+  }
+  &[data-callout="warning"], &[data-callout="caution"], &[data-callout="attention"] {
+    --callout-accent-color: var(--ebw-callout-warning);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-warning) 10%, transparent);
+  }
+  &[data-callout="failure"], &[data-callout="fail"], &[data-callout="missing"] {
+    --callout-accent-color: var(--ebw-callout-failure);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-failure) 10%, transparent);
+  }
+  &[data-callout="danger"], &[data-callout="error"] {
+    --callout-accent-color: var(--ebw-callout-danger);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-danger) 10%, transparent);
+  }
+  &[data-callout="bug"] {
+    --callout-accent-color: var(--ebw-callout-bug);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-bug) 10%, transparent);
+  }
+  &[data-callout="example"] {
+    --callout-accent-color: var(--ebw-callout-example);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-example) 10%, transparent);
+  }
+  &[data-callout="quote"], &[data-callout="cite"] {
+    --callout-accent-color: var(--ebw-callout-quote);
+    --callout-bg-color: color-mix(in srgb, var(--ebw-callout-quote) 10%, transparent);
   }
 }
 
-/* Tags in Ebullientworks Handwritten Capsule Style */
-.tags, .tag-link {
-  font-family: var(--ebw-font-header);
-  font-size: 0.9rem;
-  border-radius: 12px;
-  padding: 2px 8px;
-  border: 1px solid var(--lightgray);
-  transition: all 0.15s ease-in-out;
+/* ==========================================================================
+   5. TAGS & PILLS (Ebullientworks Capsule Badges)
+   ========================================================================== */
+.tags, .tag-link, a.tag {
+  font-family: var(--ebw-font-header) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500;
+  border-radius: 14px !important;
+  padding: 0.15rem 0.65rem !important;
+  border: 1px solid var(--lightgray) !important;
+  background-color: var(--lightgray) !important;
+  color: var(--dark) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none !important;
+  transition: all 0.15s ease-in-out !important;
 
   &:hover {
-    border-color: var(--secondary);
-    background-color: var(--highlight);
+    border-color: var(--secondary) !important;
+    background-color: var(--highlight) !important;
+    color: var(--secondary) !important;
+    transform: translateY(-1px);
   }
 }
 
-/* Blockquotes with warm styling */
-blockquote {
-  border-left: 3px solid var(--secondary);
-  padding-left: 1rem;
-  margin: 1rem 0;
-  font-style: italic;
-  opacity: 0.9;
+/* ==========================================================================
+   6. TASK LISTS & CHECKBOXES (Custom Ebullientworks Checkbox Marks)
+   ========================================================================== */
+ul.contains-task-list {
+  padding-left: 1.2rem;
+  list-style: none;
+
+  li.task-list-item {
+    position: relative;
+    padding-left: 0.4rem;
+    margin: 0.3rem 0;
+
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 1.05rem;
+      height: 1.05rem;
+      border: 1.5px solid var(--secondary);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      vertical-align: middle;
+      position: relative;
+      margin-right: 0.45rem;
+      transition: all 0.15s ease-in-out;
+
+      &:checked {
+        background-color: var(--ebw-checkbox-checked);
+        border-color: var(--ebw-checkbox-checked);
+
+        &::after {
+          content: "✔";
+          position: absolute;
+          left: 50%;
+          top: 48%;
+          transform: translate(-50%, -50%);
+          color: white;
+          font-size: 0.72rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }
 
-/* Inline Code & Code Blocks */
+/* ==========================================================================
+   7. CODE BLOCKS, BLOCKQUOTES & HORIZONTAL RULES
+   ========================================================================== */
 code {
   font-family: var(--ebw-font-code);
   font-size: 0.88em;
-  padding: 0.15em 0.35em;
+  padding: 0.15em 0.4em;
   border-radius: 4px;
+  background-color: var(--lightgray);
 }
 
-/* Navigation & Explorer Links */
-.explorer, .toc {
-  button, a {
-    font-size: 0.95rem;
-  }
-  
-  .folder-title {
-    font-weight: 600;
-  }
+blockquote {
+  border-left: 3.5px solid var(--secondary) !important;
+  padding: 0.4rem 1rem !important;
+  margin: 1.2rem 0 !important;
+  font-style: italic;
+  background-color: var(--highlight);
+  border-radius: 0 4px 4px 0;
 }
 
-/* Breadcrumbs with clean handwriting touch */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--secondary), transparent);
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   8. NAVIGATION & GRAPH CONTROLS
+   ========================================================================== */
 .breadcrumb-element {
   font-family: var(--ebw-font-header);
   font-size: 0.95rem;
+}
+
+.explorer .folder-title {
+  font-family: var(--ebw-font-header);
+  font-size: 1rem;
 }
