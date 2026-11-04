@@ -1,14 +1,13 @@
 /**
- * Ebullientworks Theme for Quartz v4
+ * Ebullientworks Theme for Quartz v4 / v5
  * Ported from the Obsidian Ebullientworks theme by ebullient
+ * Note: Google Fonts are loaded dynamically by Quartz Head via quartz.config
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 :root {
-  --ebw-font-header: 'Architects Daughter', cursive, sans-serif;
-  --ebw-font-body: 'Source Sans Pro', sans-serif;
-  --ebw-font-code: 'IBM Plex Mono', monospace;
+  --ebw-font-header: var(--headerFont, 'Architects Daughter', cursive, sans-serif);
+  --ebw-font-body: var(--bodyFont, 'Source Sans Pro', sans-serif);
+  --ebw-font-code: var(--codeFont, 'IBM Plex Mono', monospace);
 
   /* Heading Colors (Rainbow progression from Ebullientworks) */
   --ebw-h1: #f39c12;
