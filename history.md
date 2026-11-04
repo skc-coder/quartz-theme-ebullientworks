@@ -6,4 +6,5 @@
   - Extract and map Ebullientworks color schemes (dark `#1e1e1e`, light `#f8f8f8`, rainbow header progression, handwritten font accents).
   - Provide ready-to-use drop-in SCSS (`ebullientworks.scss`) and TypeScript config preset (`theme.config.ts`).
   - Package with `package.json` for npm distribution compatibility.
-- **Status**: In Progress
+- **Status**: Completed (Issue closed)
+- **GitHub Repository**: https://github.com/skc-coder/quartz-theme-ebullientworks
