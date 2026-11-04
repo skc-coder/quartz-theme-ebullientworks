@@ -1,0 +1,145 @@
+/**
+ * Ebullientworks Theme for Quartz v4
+ * Ported from the Obsidian Ebullientworks theme by ebullient
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --ebw-font-header: 'Architects Daughter', cursive, sans-serif;
+  --ebw-font-body: 'Source Sans Pro', sans-serif;
+  --ebw-font-code: 'IBM Plex Mono', monospace;
+
+  /* Heading Colors (Rainbow progression from Ebullientworks) */
+  --ebw-h1: #f39c12;
+  --ebw-h2: #27ae60;
+  --ebw-h3: #16a085;
+  --ebw-h4: #2980b9;
+  --ebw-h5: #8e44ad;
+  --ebw-h6: #d81b60;
+}
+
+[saved-theme="dark"] {
+  --ebw-h1: #f1c40f;
+  --ebw-h2: #2ecc71;
+  --ebw-h3: #1abc9c;
+  --ebw-h4: #3498db;
+  --ebw-h5: #9b59b6;
+  --ebw-h6: #e91e63;
+}
+
+/* Headings with Signature Ebullientworks Styling */
+h1, h2, h3, h4, h5, h6, .article-title {
+  font-family: var(--ebw-font-header) !important;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  position: relative;
+}
+
+h1, .article-title {
+  color: var(--ebw-h1) !important;
+  font-size: 2.1rem;
+}
+
+h2 {
+  color: var(--ebw-h2) !important;
+  font-size: 1.7rem;
+  border-bottom: 1px dashed var(--lightgray);
+  padding-bottom: 0.2rem;
+}
+
+h3 {
+  color: var(--ebw-h3) !important;
+  font-size: 1.4rem;
+}
+
+h4 {
+  color: var(--ebw-h4) !important;
+  font-size: 1.2rem;
+}
+
+h5 {
+  color: var(--ebw-h5) !important;
+  font-size: 1.05rem;
+}
+
+h6 {
+  color: var(--ebw-h6) !important;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+/* Optional Ebullientworks section sign prefix */
+.article-title::before,
+.page-header h1::before {
+  content: "§ ";
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+/* Obsidian Callouts Styling */
+.callout {
+  border-radius: 6px;
+  border-left: 4px solid var(--secondary);
+  background-color: var(--highlight);
+  padding: 0.8rem 1.2rem;
+  margin: 1.2rem 0;
+
+  .callout-title {
+    font-family: var(--ebw-font-header);
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
+
+/* Tags in Ebullientworks Handwritten Capsule Style */
+.tags, .tag-link {
+  font-family: var(--ebw-font-header);
+  font-size: 0.9rem;
+  border-radius: 12px;
+  padding: 2px 8px;
+  border: 1px solid var(--lightgray);
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    border-color: var(--secondary);
+    background-color: var(--highlight);
+  }
+}
+
+/* Blockquotes with warm styling */
+blockquote {
+  border-left: 3px solid var(--secondary);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Inline Code & Code Blocks */
+code {
+  font-family: var(--ebw-font-code);
+  font-size: 0.88em;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+/* Navigation & Explorer Links */
+.explorer, .toc {
+  button, a {
+    font-size: 0.95rem;
+  }
+  
+  .folder-title {
+    font-weight: 600;
+  }
+}
+
+/* Breadcrumbs with clean handwriting touch */
+.breadcrumb-element {
+  font-family: var(--ebw-font-header);
+  font-size: 0.95rem;
+}

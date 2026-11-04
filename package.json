@@ -1,0 +1,24 @@
+{
+  "name": "quartz-theme-ebullientworks",
+  "version": "1.0.0",
+  "description": "Obsidian Ebullientworks theme ported for Quartz v4 digital gardens",
+  "main": "theme.config.ts",
+  "style": "styles/ebullientworks.scss",
+  "scripts": {
+    "test": "echo \"Theme files ready\""
+  },
+  "keywords": [
+    "quartz",
+    "quartz-theme",
+    "obsidian",
+    "digital-garden",
+    "ebullientworks",
+    "theme"
+  ],
+  "author": "skc-coder",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skc-coder/quartz-theme-ebullientworks.git"
+  }
+}
